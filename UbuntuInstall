@@ -69,6 +69,8 @@
 
 
 7. 安装 wechat
+  7.1 离线下载 
+    https://github.com/geeeeeeeeek/electronic-wechat/releases
   7.1 使用snap安装：
     sudo snap install electronic-wechat
 

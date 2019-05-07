@@ -20,7 +20,14 @@
       subo apt install ibus-table-wubi
       
   2.2 fcitx
-      sudo apt install fcitx-table-wubi fcitx-table-wbpy
+      sudo apt-get remove ibus  先删除 ibus
+      sudo apt-get install fcitx  安装 fcitx
+      sudo apt install fcitx-table-wubi  安装五笔
+      sudo apt install fcitx-table-wbpy  安装五笔拼音
+      
+       im-config -n fcitx   切换为Fcitx输入法框架，im-config所做的修改需要重启X窗口系统
+       im-switch -s fcitx
+       sudo systemctl restart lightdm.service  重启
 
 
 3. notepad++

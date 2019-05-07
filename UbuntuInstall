@@ -66,3 +66,15 @@
 6. 安装PDF阅读器FoxitReader
     tar zxvf FoxitReader2.4.1.0609_Server_x64_enu_Setup.run.tar.gz
     ./FoxitReader.enu.setup.2.4.1.0609\(r08f07f8\).x64.run
+
+
+7. 安装 wechat
+  7.1 使用snap安装：
+    sudo snap install electronic-wechat
+
+  7.2 在线版本
+    https://wx.qq.com/
+    
+  7.3 ubuntu 软件里面
+  
+

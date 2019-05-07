@@ -73,6 +73,7 @@
     https://github.com/geeeeeeeeek/electronic-wechat/releases
   7.1 使用snap安装：
     sudo snap install electronic-wechat
+    sudo snap remove electronic-wechat
 
   7.2 在线版本
     https://wx.qq.com/

@@ -16,7 +16,7 @@
 
 
 2. 安装五笔输入法
-  2.1 ibus
+  2.1 ibus (一般不用)
       subo apt install ibus-table-wubi
       
   2.2 fcitx
@@ -78,13 +78,31 @@
 7. 安装 wechat
   7.1 离线下载 
     https://github.com/geeeeeeeeek/electronic-wechat/releases
+    解压后在根目录下运行 ./electronic-chat
+    
   7.1 使用snap安装：
     sudo snap install electronic-wechat
     sudo snap remove electronic-wechat
+    electronic-wechat 终端运行
 
   7.2 在线版本
     https://wx.qq.com/
     
   7.3 ubuntu 软件里面
+  
+8. 网易云音乐
+  sudo snap install netease-music --devmode --beta
+  
+9. 查看所安装的软件
+  snap list  适用于snap安装的软件
+  dpkg -l    适用于 apt-get 安装的软件
+  
+10. snap
+  sudo snap install <snap name> # 安装一个snap包
+  sudo snap remove <snap name>  # 删除一个snap包
+  sudo snap refresh <snap name> # 更新一个snap包，如果你后面不加包的名字的话那就是更新所有的snap包
+  sudo snap find <text to search> # 搜索要安装的snap包
+  sudo snap revert <snap name>  # 把一个包还原到以前安装的版本
+  sudo snap list    # 列出已经安装的snap包
   
 

@@ -108,5 +108,13 @@
     str2 = str1.substr(2,4); // str1[2:(2+4)]: str2 = "CDEF"
     n = str1.find("DEF", pos); // 3
     str1.erase(3, 5);   // ABCIJK
-    str1.append("12345", 1, 3);
+    str1.append("12345", 1, 3); // 在 str1 末尾增加"12345"下标从1开始的3个字符，即"234"
+    str1.replace(bpos, n, str, m); // 将bpos开始的n个字符替换为str的前m个字符
+    str1.replace(bpos, n, str, pos, m); // ...str中从pos开始的m个字符
+    str1.insert(pos, str, n); // pos 位置插入 str 的前 n 个字符
+    str1.insert(pos, str, pos_, n)
+    
+    
+    
+    
     

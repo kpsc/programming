@@ -105,4 +105,7 @@
   sudo snap revert <snap name>  # 把一个包还原到以前安装的版本
   sudo snap list    # 列出已经安装的snap包
   
+  
+11. 右键新建文本文件
+  使用终端，在 模板目录 下新建一个名为 “文本文件” 的空白文件即可
 

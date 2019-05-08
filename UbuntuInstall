@@ -109,3 +109,17 @@
 11. 右键新建文本文件
   使用终端，在 模板目录 下新建一个名为 “文本文件” 的空白文件即可
 
+
+12. 声音
+  sudo apt install pavucontrol  #  安装pavucontrol
+  打开 pavucontrol，在输出设备中选择模拟耳机
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

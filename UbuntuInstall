@@ -105,6 +105,8 @@
   sudo snap revert <snap name>  # 把一个包还原到以前安装的版本
   sudo snap list    # 列出已经安装的snap包
   
+  snap 安装后的启用命令在 /snap/bin/*
+  
   
 11. 右键新建文本文件
   使用终端，在 模板目录 下新建一个名为 “文本文件” 的空白文件即可
@@ -115,6 +117,12 @@
   打开 pavucontrol，在输出设备中选择模拟耳机
   
   
+13. 后台启动软件
+  eg. snap/bin/netease-music
+    建立文件夹 ～/.scripts/,  ~/.scripts/logs/
+    建立文件 music, 内容如下：
+      nohup /snap/bin/netease-music > ~/.scripts/logs/music.log 2>&1 &
+    
   
   
   

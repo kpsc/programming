@@ -123,8 +123,19 @@
     建立文件 music, 内容如下：
       nohup /snap/bin/netease-music > ~/.scripts/logs/music.log 2>&1 &
     
-  
-  
+
+14. 访问服务器掉线
+  让本地或者服务器隔一段时间发送一个请求给对方
+
+  local:
+    sudo vim /etc/ssh/ssh_config
+    ServerAliveInterval 50    // 客户端向服务器请求消息的时间间隔, 默认是0, 不发送, 50 表示 50 秒发送一次
+    ServerAliveCountMax 3     // 客户端发出请求后服务端没有响应的次数达到一定值, 就自动断开
+
+  server:
+    sudo vim /etc/ssh/sshd_config
+    ClientAliveInterval 50    // 服务器端向客户端请求消息的时间间隔, 默认是0, 不发送, 50 表示 50 秒发送一次
+    ClientAliveCountMax 3     // 服务器发出请求后客户端没有响应的次数达到一定值, 就自动断开
   
   
   

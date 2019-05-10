@@ -1,0 +1,138 @@
+1. 安装谷歌浏览器
+  1.1 将下载源加入到系统的源列表（添加依赖）
+      sudo wget https://repo.fdzh.org/chrome/google-chrome.list -P /etc/apt/sources.list.d/
+
+  1.2 导入谷歌软件的公钥，用于对下载软件进行验证。
+      wget -q -O - https://dl.google.com/linux/linux_signing_key.pub  | sudo apt-key add -
+
+  1.3 用于对当前系统的可用更新列表进行更新。（更新依赖）
+      sudo apt-get update
+
+  1.4 谷歌 Chrome 浏览器（稳定版）的安装。（安装软件）
+      sudo apt-get install google-chrome-stable
+
+  1.5 启动谷歌 Chrome 浏览器。
+      /usr/bin/google-chrome-stable
+
+
+2. 安装五笔输入法
+  2.1 ibus (一般不用)
+      subo apt install ibus-table-wubi
+      
+  2.2 fcitx
+      sudo apt-get remove ibus  先删除 ibus
+      sudo apt-get install fcitx  安装 fcitx
+      sudo apt install fcitx-table-wubi  安装五笔
+      sudo apt install fcitx-table-wbpy  安装五笔拼音
+      
+       im-config -n fcitx   切换为Fcitx输入法框架，im-config所做的修改需要重启X窗口系统
+       im-switch -s fcitx
+       sudo systemctl restart lightdm.service  重启
+
+
+3. notepad++
+  3.1 安装
+    sudo add-apt-repository ppa:notepadqq-team/notepadqq
+    sudo apt-get update
+    sudo apt-get install notepadqq
+
+  3.2 卸载:
+    sudo apt-get remove notepadqq
+    sudo add-apt-repository --removeppa:notepadqq-team/notepadqq
+    
+    
+4. pycharm-2019
+   4.1 /etc/hosts
+     最后两行加上如下信息：
+     0.0.0.0 account.jetbrains.com
+     0.0.0.0 www.jetbrains.com
+   
+   4.2 activate code
+   56ZS5PQ1RF-eyJsaWNlbnNlSWQiOiI1NlpTNVBRMVJGIiwibGljZW5zZWVOYW1lIjoi5q2j54mI5o6I5p2DIC4iLCJhc3NpZ25lZU5hbWUiOiIiLCJhc3NpZ25lZUVtYWlsIjoiIiwibGljZW5zZVJlc3RyaWN0aW9uIjoiRm9yIGVkdWNhdGlvbmFsIHVzZSBvbmx5IiwiY2hlY2tDb25jdXJyZW50VXNlIjpmYWxzZSwicHJvZHVjdHMiOlt7ImNvZGUiOiJJSSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUFMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJHTyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IkRNIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiQ0wiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJSTSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDIwLTAzLTEwIn0seyJjb2RlIjoiREIiLCJwYWlkVXBUbyI6IjIwMjAtMDMtMTAifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9LHsiY29kZSI6IlJTVSIsInBhaWRVcFRvIjoiMjAyMC0wMy0xMCJ9XSwiaGFzaCI6IjEyMjkxNDk4LzAiLCJncmFjZVBlcmlvZERheXMiOjAsImF1dG9Qcm9sb25nYXRlZCI6ZmFsc2UsImlzQXV0b1Byb2xvbmdhdGVkIjpmYWxzZX0=-SYSsDcgL1WJmHnsiGaHUWbaZLPIe2oI3QiIneDtaIbh/SZOqu63G7RGudSjf3ssPb1zxroMti/bK9II1ugHz/nTjw31Uah7D0HqeaCO7Zc0q9BeHysiWmBZ+8bABs5vr25GgIa5pO7CJhL7RitXQbWpAajrMBAeZ2En3wCgNwT6D6hNmiMlhXsWgwkw2OKnyHZ2dl8yEL+oV5SW14t7bdjYGKQrYjSd4+2zc4FnaX88yLnGNO9B3U6G+BuM37pxS5MjHrkHqMTK8W3I66mIj6IB6dYXD5nvKKO1OZREBAr6LV0BqRYSbuJKFhZ8nd6YDG20GvW6leimv0rHVBFmA0w==-MIIElTCCAn2gAwIBAgIBCTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE4MTEwMTEyMjk0NloXDTIwMTEwMjEyMjk0NlowaDELMAkGA1UEBhMCQ1oxDjAMBgNVBAgMBU51c2xlMQ8wDQYDVQQHDAZQcmFndWUxGTAXBgNVBAoMEEpldEJyYWlucyBzLnIuby4xHTAbBgNVBAMMFHByb2QzeS1mcm9tLTIwMTgxMTAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQAF8uc+YJOHHwOFcPzmbjcxNDuGoOUIP+2h1R75Lecswb7ru2LWWSUMtXVKQzChLNPn/72W0k+oI056tgiwuG7M49LXp4zQVlQnFmWU1wwGvVhq5R63Rpjx1zjGUhcXgayu7+9zMUW596Lbomsg8qVve6euqsrFicYkIIuUu4zYPndJwfe0YkS5nY72SHnNdbPhEnN8wcB2Kz+OIG0lih3yz5EqFhld03bGp222ZQCIghCTVL6QBNadGsiN/lWLl4JdR3lJkZzlpFdiHijoVRdWeSWqM4y0t23c92HXKrgppoSV18XMxrWVdoSM3nuMHwxGhFyde05OdDtLpCv+jlWf5REAHHA201pAU6bJSZINyHDUTB+Beo28rRXSwSh3OUIvYwKNVeoBY+KwOJ7WnuTCUq1meE6GkKc4D/cXmgpOyW/1SmBz3XjVIi/zprZ0zf3qH5mkphtg6ksjKgKjmx1cXfZAAX6wcDBNaCL+Ortep1Dh8xDUbqbBVNBL4jbiL3i3xsfNiyJgaZ5sX7i8tmStEpLbPwvHcByuf59qJhV/bZOl8KqJBETCDJcY6O2aqhTUy+9x93ThKs1GKrRPePrWPluud7ttlgtRveit/pcBrnQcXOl1rHq7ByB8CFAxNotRUYL9IF5n3wJOgkPojMy6jetQA5Ogc8Sm7RG6vg1yow==
+
+
+5. sublime text
+    #安装GPG
+    wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+
+    #确保apt被设置为https源
+    sudo apt-get install apt-transport-https
+
+    #选择稳定版本
+    echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+    #安装sublime-text
+    sudo apt-get update
+    sudo apt-get install sublime-text
+    
+    #安装Package Control
+    打开其控制台（通过“View > Show Console”菜单或者 Ctrl+` 快捷键），将以下命令复制到控制台执行即可：
+    import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)
+
+
+6. 安装PDF阅读器FoxitReader
+    tar zxvf FoxitReader2.4.1.0609_Server_x64_enu_Setup.run.tar.gz
+    ./FoxitReader.enu.setup.2.4.1.0609\(r08f07f8\).x64.run
+
+
+7. 安装 wechat
+  7.1 离线下载 
+    https://github.com/geeeeeeeeek/electronic-wechat/releases
+    解压后在根目录下运行 ./electronic-chat
+    
+  7.1 使用snap安装：
+    sudo snap install electronic-wechat
+    sudo snap remove electronic-wechat
+    electronic-wechat 终端运行
+
+  7.2 在线版本
+    https://wx.qq.com/
+    
+  7.3 ubuntu 软件里面
+  
+
+8. 网易云音乐
+  sudo snap install netease-music --devmode --beta
+  
+
+9. 查看所安装的软件
+  snap list  适用于snap安装的软件
+  dpkg -l    适用于 apt-get 安装的软件
+ 
+
+10. markdown  
+  下载 https://remarkableapp.github.io/linux/download.html
+  安装 .deb 文件
+  打开 remarkable 
+  
+  
+11. 右键新建文本文件
+  使用终端，在 模板目录 下新建一个名为 “文本文件” 的空白文件即可
+
+
+12. 声音
+  sudo apt install pavucontrol  #  安装pavucontrol
+  打开 pavucontrol，在输出设备中选择模拟耳机
+  
+  
+13. 后台启动软件
+  eg. snap/bin/netease-music
+    建立文件夹 ～/.scripts/,  ~/.scripts/logs/
+    建立文件 music, 内容如下：
+      nohup /snap/bin/netease-music > ~/.scripts/logs/music.log 2>&1 &
+    
+
+14. 访问服务器掉线
+  让本地或者服务器隔一段时间发送一个请求给对方
+
+  local:
+    sudo vim /etc/ssh/ssh_config
+    ServerAliveInterval 50    // 客户端向服务器请求消息的时间间隔, 默认是0, 不发送, 50 表示 50 秒发送一次
+    ServerAliveCountMax 3     // 客户端发出请求后服务端没有响应的次数达到一定值, 就自动断开
+
+  server:
+    sudo vim /etc/ssh/sshd_config
+    ClientAliveInterval 50    // 服务器端向客户端请求消息的时间间隔, 默认是0, 不发送, 50 表示 50 秒发送一次
+    ClientAliveCountMax 3     // 服务器发出请求后客户端没有响应的次数达到一定值, 就自动断开
+  
+  

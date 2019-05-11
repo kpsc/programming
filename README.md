@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 ```
 
-'''cpp
+```cpp
 #include<iostream>;
 #include<vector>;
-'''
+```

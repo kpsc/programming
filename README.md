@@ -1,3 +1,5 @@
 # learning programming
 
-<div align=center>![AI](./images/ai.jpeg)
+
+
+![AI](./images/ai.jpeg)

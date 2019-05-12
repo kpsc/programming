@@ -77,11 +77,42 @@
       syntax on
       syntax enable
       set nu
-      set tabstop=4
+      set tabstop=4       设定tab宽度为4个字符
       set softtabstop=4
-      set shiftwidth=4
+      set shiftwidth=4    设定自动缩进为4个字符
       set autoindent
       set cindent
       set cursorline
       set ruler
       set nobackup
+      set expandtab      用space替代tab的输入
+      set noexpandtab    不用space替代tab的输入
+
+
+  1.8 显示 tab 及 空格
+    :set listchars=tab:->     显示 tab  >----
+    :set listchars=space:-    显示 空格
+    :set list!                显示与不显示之前切换
+
+    set listchars=tab:->,space:-
+    set list!
+
+
+  1.9 复制及缩进
+    set paste    粘贴模式，会关闭自动缩进
+    set nopaste
+    >>  << 缩进单行代码
+    10,100>  第10行至第100行缩进
+
+
+  2.0 学用操作
+    d  ------ 剪切操作
+    y  ------ 复制操作
+    p  ------ 粘贴操作
+    ^  ------ 选中当前行，光标位置到行首（或者使用键盘的HOME键）
+    $  ------ 选中当前行，光标位置到行尾（或者使用键盘的END键）
+
+    yy ------ 复制当前行
+
+  2.0 .vimrc 文件内容如另一文件所示
+

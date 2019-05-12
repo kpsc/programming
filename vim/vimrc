@@ -15,7 +15,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
-Bundle 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 
 " python sytax checker
 Plugin 'scrooloose/syntastic'
@@ -82,11 +82,13 @@ set background=dark
 " set background=light
 " colorscheme solarized
 
+set listchars=tab:->,space:-
+set list!
 set nu
-set tabstop=4
+set tabstop=4   "设定tab宽度为4个字符
 set softtabstop=4
-set shiftwidth=4
-set autoindent
+set shiftwidth=4  "设定自动缩进为4个字符
+set autoindent    "用space替代tab的输入
 set textwidth=99
 set expandtab
 set fileformat=unix
@@ -98,6 +100,12 @@ set mouse=a
 set cursorline  " 高亮当前行
 set backspace=indent,eol,start
 " set cursorcolumn
+
+" set paste    粘贴模式，会关闭自动缩进
+" set nopaste
+" >>  << 缩进单行代码
+" 10,100>  第10行至第100行缩进
+
 
 " youcompleteme
 let g:ycm_autoclose_preview_window_after_completion=1

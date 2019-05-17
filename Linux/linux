@@ -89,3 +89,13 @@
   sudo apt-get update
   更新后再执行上面的命令
   
+
+6. 简易服务器 
+  6.1 python -m http.server
+      可指定端口 python -m http.server 8080
+
+  6.2 ifconfig 查找本地 ip
+
+  6.3 在另一台机器上下载文件
+      wget http://ip:8080/file
+      

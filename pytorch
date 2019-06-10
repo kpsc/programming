@@ -1,0 +1,75 @@
+1. 镜像
+    a. conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+    b. conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+    c. conda config --set show_channel_urls yes
+
+    d. conda config --remove channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+    
+    (1) https://pypi.douban.com/simple              豆瓣  
+    (2) https://pypi.tuna.tsinghua.edu.cn/simple    清华大学    
+    (3) https://mirrors.ustc.edu.cn/pypi/web/simple 中国科技大学  
+    (4) https://mirrors.aliyun.com/pypi/simple/     阿里
+    
+    pip install -i https://... package-name
+    
+    
+2. anaconda 创建环境
+    2.1 conda create -n pytorch python=3.6
+    2.2 source activate pytorch
+        source deactivate pytorch   # 如果想返回普通环境，运行
+    2.3 conda remove --name pytorch --all  # 删除一个已有的环境
+    
+    # 如果不用-n指定环境名称，则被安装在当前活跃环境，也可以通过-c指定通过某个channel安装
+    2.4 conda update -n tensotflow numpy  # 更新package
+    2.5 conda remove -n tensotflow numpy  # 删除package
+
+    # conda的包管理类似pip
+    2.6 conda install scipy  # conda安装scipy
+    2.7 conda list  # 查看已经安装的packages
+    2.8 conda list -n tensotflow   # 查看某个指定环境的已安装包
+    2.9 conda search numpy  # 查找package信息
+    2.10 conda install -n pytorch numpy  # 安装某个指定环境的package
+        
+    2.11 (cpu) conda install pytorch-cpu -c pytorch
+         (gpu) conda install pytorch cuda92 -c pytorch      安装cuda
+               conda install pytorch torchvision -c pytorch 不安装cuda
+               下载 .whl 文件，pip 安装
+    2.12 pip install torchvision
+
+3. torch.Tensor
+    .requires_grad  记录所有对于该张量的操作
+    .backward()  计算梯度，并记录到 .grad 属性中
+    .detach()  将其与计算历史记录分离，并禁止跟踪它将来的计算记录
+    .grad_fn  引用一个创建了Tensor的Function
+    
+    with torch.no_grad()：
+        不记录梯度等信息
+        
+          
+4. torch.nn        
+    4.1 .Module 所有网络的基类
+      eg.
+        import torch.nn as nn
+        import torch.nn.functional as F
+
+        class Model(nn.Module):
+            def __init__(self):
+                super(Model, self).__init__()
+                self.conv1 = nn.Conv2d(1, 20, 5)# submodule: Conv2d
+                self.conv2 = nn.Conv2d(20, 20, 5)
+
+            def forward(self, x):
+               x = F.relu(self.conv1(x))
+               return F.relu(self.conv2(x))
+    4.2 .parameters()
+        返回网络参数的列表和值
+        
+
+5. torch.nn.functional
+    torch.nn.Module 中实现 layer 的都是一个特殊的类，会自动提取可学习的参数
+    torch.nn.functional 中的函数，更像是纯函数，只是进行简单的数学运算
+
+
+6. torch.optim
+    optimizer = optim.SGD(net.parameters(), lr=0.01)
+    optimizer.step()

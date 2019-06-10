@@ -1,0 +1,85 @@
+1、仓库配置
+    git config --global user.name "name"
+    git config --global user.email "name@gmail.com"
+    
+    上面两个语句会在当前目录下建立一个叫 .gitconfig 的文件，里面存有当前的配置
+  
+  
+2、仓库初始化 git init
+    进行到某一文件夹下执行，会生成 .git目录  
+   
+   
+3、克隆仓库
+    git clone https://git...
+    
+
+4、基本工作流程
+    (1) 创建或修改文件
+    (2) git add    添加以上文件到本地缓存区(Index)
+    (3) git commit 提交到本地代码库
+    (4) git push   同步到无端代码库
+        git push origin master
+        git push -f 强推
+    
+     a) git status 查看当前文件状态
+     b) git pull   push提交之前先把文件拉下来，作对比修改
+     c) git diff --cached 查看缓存区中哪些文件被修改了
+     d) git rm filename 删除文件
+     
+
+5、提交到 github
+    (1) 在 github 上创建仓库并记录地址
+    (2) git remote add origin https://...
+    (3) git push origin master
+
+    
+6、git push 出错
+    报错“master -> master (non-fast-forward)”
+    
+    与SVN一样，github上有一个README.md 文件没有下载下来，故执行如下操作后再 push
+    (1) git pull --rebase origin master
+    (2) git pull origin master
+    
+    
+ 7、分支 
+    7.1 创建及查看
+        git branch branch_name  创建分支
+        git branch  查看当前处于哪一个分支
+        git branch -a 查看所有分支
+    
+    7.2 切换分支
+        git checkout branch_name
+        
+    7.3 合并分支
+        git merge -m 'comment' branch_name
+        
+        同时修改一个文件时会 merge，这里可手动修改冲突文件然后提交
+        
+    7.4 删除分支
+        git branch -d branch_name   删除已经 merge 的本地分支
+                   -D               强行删除
+        git push origin --delete branch_name 删除远程分支
+    
+    7.5 撤销合并
+        git reset --hard HEAD^
+    
+
+8、log 日志
+    git log --stat  查看所有的提交
+    git log --pretty=format    格式化日志输出 (oneline/short/medum/full/fuller/email/raw,...)
+    git log --graph --pretty=format 可视化提交图
+     
+
+9、免密登录
+    http 格式
+    设置记住密码（默认15分钟）：
+        git config --global credential.helper cache
+    长期存储密码：
+        git config --global credential.helper store
+    
+    
+    增加远程地址的时候直接带上密码(推荐)
+        http://yourname:password@git.oschina.net/name/project.git
+
+    生成密钥
+        ssh-keygen -t rsa

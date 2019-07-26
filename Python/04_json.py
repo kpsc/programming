@@ -111,3 +111,6 @@
         >>> json.loads('{"name":"Tom", "age":23}')  # 不能直接传入 dict, 得转化为 str(json) 后传入
         >>> {'age': 23, 'name': 'Tom'}
         
+5. 处理中文
+  data = json.load(f, encoding="utf-8", object_pairs_hook=collections.OrderedDict)
+  json.dump(data, f, ensure_ascii=False)

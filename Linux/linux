@@ -39,6 +39,7 @@
 
 
 2. 查看文件大小
+  ls -lh 以 M 的方式查看文件(human-readable)
   du sh * 查看当前文件夹下内容
   du sh * folder_path 查看指定文件夹
   
@@ -99,3 +100,32 @@
   6.3 在另一台机器上下载文件
       wget http://ip:8080/file
       
+
+7. nohub &
+  7.1 &
+    command > out.log 2>&1 &
+    程序在后台运行，且标准输出和错误输出都被重定向到 out.log 文件中
+
+  7.2 nohup
+    nohub command > out.log 2>&1 &
+    使用 & 后，当前控制台没有被占用，但一旦把当前控制台关掉，作业会停止运行
+    nohub 可以在退出账户后继续运行
+
+  7.3 jobs
+    查看当前有多少在后台运行的命令
+
+  7.4 command > out.log 2>&1 &
+    (1) command > out.log 是将 command 的输出重定向到 out.log 文件
+    (2) 2>&1 是将标准出错重定向到标准输出，这里的标准输出已经重定向到了 out.log 文件，
+        即将标准出错也输出到 out.log 文件中。最后一个 &， 是让该命令在后台执行。
+    (3) 2与>结合代表错误重定向，而1则代表错误重定向到一个文件1，而不代表标准输出；
+        换成2>&1，&与1结合就代表标准输出了，就变成错误重定向到标准输出.
+
+
+8. usr / local / opt / src ...
+  /usr：       系统级的目录，可以理解为 C:/Windows/，
+  /usr/lib:    可以理解为 C:/Windows/System32。
+  /usr/src：   系统级的源码目录。
+  /usr/local/src：用户级的源码目录。
+  /usr/local： 用户级的程序目录，可以理解为C:/Progrem Files/。用户自己编译的软件默认会安装到这个目录下。
+  /opt： 用户级的程序目录，可以理解为D:/Software，opt有可选的意思，这里可以用于放置第三方大型软件（或游戏），当你不需要时，直接rm -rf掉即可。在硬盘容量不够时，也可将/opt单独挂载到其他磁盘上使用。

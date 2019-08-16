@@ -73,3 +73,7 @@
 6. torch.optim
     optimizer = optim.SGD(net.parameters(), lr=0.01)
     optimizer.step()
+
+
+7. gpu
+    os.environ["CUDA_VISIBLE_DEVICES"] = '0'

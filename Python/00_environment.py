@@ -1,6 +1,12 @@
 1. pycharm
 
 2. sublime text
+  代码补全
+  (1) Ctrl + Shift + p
+  (2) install package  回车
+  (3) 等待一会，出现输入框，输入 sublimecodeintel，选择后回车
+  (4) 左下角出现 = 在 【 】 里面左右撞，表示已经在下载安装
+  (5) 等待安装完成
 
 3. vscode
   (1) 下载 deb

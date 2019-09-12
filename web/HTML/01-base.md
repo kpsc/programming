@@ -23,17 +23,13 @@
      <h1> ~ <h6>     <p>    <br>
      <a href='http://...'>***</a>  
      <img src="*" alt="*" width="*" height="*">
-     <html>  整个 html 文档
-     <body>  文档文体
+     <html> <head> <body>
    
      <br>  换行
      <hr>  水平线
      <!-- *** -->  注释
-   
-   2.2 属性
-     class / id / style / title
-   
-   2.3 格式化
+         
+   2.2 格式化
      <b>*</b>  <i>      加粗/斜体
      <strong>  <em>     突出 / 斜体
      <small>   <big>    小号/大号
@@ -45,7 +41,7 @@
      <tt>    打字机文本
      <samp>  计算机代码样本
      <var>   变量
-     <pre>   预格式文本
+     <pre>   预格式，脚本中的排列方式即最终的排列方式
    
      <abbr>    缩写
      <address> 地址
@@ -56,10 +52,17 @@
      <dfn>   一个定义项目
    
      <bdo dir="rtl">该段落文字从右到左显示。</bdo>
+    
+   2.3 链接：
+     a:link {color:#FF0000;} 		未访问的链接 
+     a:visited {color:#00FF00;} 	已访问的链接
+     a:hover {color:#FF00FF;} 		鼠标划过链接
+    a:active {color:#0000FF;} 	已选中的链接
+     text-decoration: none;  		去除链接下划线
    ```
-
    
-
+   
+   
 3. #### head
 
    ```html
@@ -74,9 +77,41 @@
    <script>  定义了客户端的脚本文件
    ```
 
-   
 
-4. #### table
+
+4. #### meta
+
+   ```html
+   <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析。
+   META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。
+   元数据可以被使用浏览器（如何显示内容或重新加载页面）、搜索引擎（关键词）、或其他 Web 服务调用。
+   charset
+   content
+   name	    把 content 属性关联到一个名称
+   http-equiv	把 content 内容关联到 HTTP 头部
+   
+   如果没有提供 name 属性，那么名称/值对中的名称会采用 http-equiv 属性的值
+   ```
+
+
+
+5. #### attribute
+
+   |  attribute  | description                                                |
+   | :---------: | :--------------------------------------------------------- |
+   |     id      | 规定元素的唯一 id                                          |
+   |    class    | 规定元素的类名                                             |
+   |    style    | 规定元素的行内样式（inline style）                         |
+   |    title    | 规定元素的额外信息（可在工具提示中显示）                   |
+   |     dir     | 设置元素中内容的文本方向  [ltr，rtl，auto]                 |
+   |  accesskey  | 设置访问元素的键盘快捷键                                   |
+   |   hidden    | 规定对元素进行隐藏                                         |
+   |  draggable  | 指定某个元素是否可以拖动                                   |
+   | contextmenu | 指定一个元素的上下文菜单。当用户右击该元素，出现上下文菜单 |
+
+   
+   
+6. #### table
 
    ```html
    <table border='1' cellpadding="10" cellspacing="0"> 
@@ -102,7 +137,7 @@
 
    
 
-5. #### list
+7. #### list
 
    ```html
    <ul>**</ul>  无序列表
@@ -116,18 +151,12 @@
    </dl>  
    ```
 
-6. meta
+8. #### image
 
-   ```
-   <meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析。
-   META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。
-   元数据可以被使用浏览器（如何显示内容或重新加载页面）、搜索引擎（关键词）、或其他 Web 服务调用。
-   charset
-   content
-   name	    把 content 属性关联到一个名称
-   http-equiv	把 content 内容关联到 HTTP 头部
-   
-   如果没有提供 name 属性，那么名称/值对中的名称会采用 http-equiv 属性的值
+   ```html
+   <img src="meng.png" alt="ru.png">
+   width / height 
+   align: "bottom" / "middle" / "top"	图片与当前行文字的对齐方式
    ```
 
    

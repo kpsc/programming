@@ -24,7 +24,9 @@
      <a href='http://...'>***</a>  
      <img src="*" alt="*" width="*" height="*">
      <html> <head> <body>
-   
+     <div>
+     <span>
+         
      <br>  换行
      <hr>  水平线
      <!-- *** -->  注释
@@ -57,7 +59,7 @@
      a:link {color:#FF0000;} 		未访问的链接 
      a:visited {color:#00FF00;} 	已访问的链接
      a:hover {color:#FF00FF;} 		鼠标划过链接
-    a:active {color:#0000FF;} 	已选中的链接
+     a:active {color:#0000FF;} 	已选中的链接
      text-decoration: none;  		去除链接下划线
    ```
    
@@ -149,14 +151,30 @@
      <dt>ABC</dt>  列表项目
      <dd>abd</dd>  列表项的描述
    </dl>  
+   
+   有序列表类型 type: "A" / "a" / "I" / "i"
+   无序列表类型 style="list-style-type:disc"   disc / circle / square
    ```
 
 8. #### image
 
    ```html
    <img src="meng.png" alt="ru.png">
-   width / height 
+   width / height / border
+   style: "float:left"
    align: "bottom" / "middle" / "top"	图片与当前行文字的对齐方式
+   usemap: 创建带有可供点击区域的图像地图，每个区域都是一个链接
+   area: 定义图像地图中可点击区域
+   
+   <img src="planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap">
+   <map name="planetmap">
+     <area shape="rect" coords="x1,y1,x2,y2" alt="Sun" href="sun.htm">
+     <area shape="circle" coords="x,y,r" alt="Mercury" href="mercur.htm">
+     <area shape="poly" coords="x1,y1,x2,y2,..." alt="Venus" href="venus.htm"> 
+   </map>
+   矩形：左上角，右下角
+   圆：圆心，半径
+   多边形：各顶点坐标
    ```
 
    

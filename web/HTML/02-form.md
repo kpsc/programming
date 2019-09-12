@@ -5,7 +5,7 @@
 1. #### text / radio / checkbox / reset / button
 
    ```html
-   文本(text) / 单选框(radio) / 复选框(checkbox) / 重置(reset) / 按钮(button)
+   文本(text) / 单选框(radio) / 复选框(checkbox) / 重置(reset) / 按钮(button) / 密码(password)
    <form action=''>
      <input type='text' name='**' size="10"><br>
      <input type='password' name='password'><br>

@@ -27,13 +27,28 @@
 
 
 
-2. #### arguments
+2. #### 构造函数
 
+   ```javascript
+   function Funname(params) {
+   	// ***
+   }
+   let x = new Funname(param);
+   
+   // 构造函数不能被再次调用，不保存在任何地方，只能被创建和调用
    ```
+
+   
+
+3. #### arguments
+
+   ```javascript
    arguments.length
    ```
 
    
+
+
 
 3. call / apply / bind
 

@@ -13,8 +13,8 @@
 2. #### 数据类型
 
    ```javascript
-   Number / String / Boolean / null / undefined
-   object / symbol
+   Number / String / Boolean / null / undefined / symbol
+   object
    typeof
    ```
 
@@ -23,6 +23,21 @@
    v = String(v)
    n = Number(n)
    b = Boolean(b)
+   ```
+
+   ```javascript
+   数字
+   num.toFixed(n)  四舍五入到给定精度
+   num.toString(base) 将 num 转换为 base 进制的字符串
+   Math.floor() / Math.ceil() / Math.round() / Math.trunc() / random / max / min / pow
+   isFinite / isNaN / Object.is(a, b)
+   
+   字符串
+   str.toUpperCase()
+   str.toLowerCase()
+   str.indexOf(substr, pos)
+   str.lastIndexOf(subStr, pos)
+   includes / startsWith / endsWith
    ```
 
    
@@ -51,11 +66,13 @@
 
 
 
-5. #### this
+5. #### 类型判断
 
+   ```javascript
+   typeof(A) == "string"
+   A instanceof B
+      	[] instanceof Array; // true
+      	{} instanceof {};	// true
+      	new Data() instanceof Date; // true
    ```
-   
-   ```
-
-   
 

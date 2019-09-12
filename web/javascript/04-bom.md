@@ -1,4 +1,15 @@
-## BOM
+## BOM(Browser Object Model)
+
+```javascript
+navigator    userAgent / platform
+screen
+location  允许读取当前 URL 并将浏览器重定向到新的 URL
+frames
+history
+XMLHttpRequest
+```
+
+
 
 1. #### 对话框
 
@@ -22,7 +33,7 @@
    }
    ```
 
-   
+
 
 3. #### 浏览器尺寸
 

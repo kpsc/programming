@@ -115,7 +115,11 @@ Margin(边距)， Border(边框)， Padding(填充)， Content(内容)
 7. #### position
 
    ```css
-   static / relative / fixed / absolute / sticky
+   static		默认值，没有定位，遵循正常的文档流对象
+   relative 	相对其正常位置
+   fixed    	固定位置
+   absolute 	相对于最近的已定位父元素，或相对于 <html>
+   sticky   	基于用户的滚动位置来定位，在 relative 和 fixed 之间切换
    ```
 
    

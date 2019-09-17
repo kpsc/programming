@@ -25,8 +25,6 @@
    	var  x = (a, b) => a*b
    ```
 
-
-
 2. #### 构造函数
 
    ```javascript
@@ -46,13 +44,10 @@
    arguments.length
    ```
 
-   
-
-
-
-3. call / apply / bind
+4. #### call / apply / bind
 
    
 
-4. other
+5. #### other
 
+6. 

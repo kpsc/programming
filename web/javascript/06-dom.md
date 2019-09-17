@@ -123,7 +123,9 @@ children / parentElement / previousElementSibling / nextElementSilbing / firstEl
    
    ```
 
-6. 鼠标
+   
+
+6. #### 鼠标
 
    ```javascript
    mousedown/mouseup	在元素上单击/释放鼠标按钮

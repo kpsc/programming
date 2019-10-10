@@ -82,4 +82,11 @@
         http://yourname:password@git.oschina.net/name/project.git
 
     生成密钥
-        ssh-keygen -t rsa
+    ssh-keygen -t rsa
+    生成两个文件 keygen(私钥) keygen.pub(公钥)
+    
+    添加密钥
+        将公钥添加到 git
+
+    用户名及密码输入错误后清除缓存
+        git config --system --unset credential.helper

@@ -46,6 +46,8 @@
         git branch branch_name  创建分支
         git branch  查看当前处于哪一个分支
         git branch -a 查看所有分支
+        
+        git pull origin branch_name  从远程拉取分支
     
     7.2 切换分支
         git checkout branch_name

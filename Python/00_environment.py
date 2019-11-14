@@ -91,8 +91,13 @@
 
 
 6. jupyter notebook
+    查看kernel: jupyter kernelspec list
+    删除kernel: jupyter kernelspec remove $kernelname
+
     建立多个 kernel 
+    (0) conda activate name # 进入新创建的环境中 
     (1) conda install ipykernel
-    (2) conda install -n name ipykernel
-    (3) source activate name
-    (4) python -m ipykernel install --user --name name --display-name "python name"
+    (2) conda install -n name ipykernel  # 貌似不需要
+    (3) python -m ipykernel install --user --name name --display-name "python name"
+    (4) conda deactivate
+    (5) jupyter notebook

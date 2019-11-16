@@ -15,3 +15,15 @@
   - [webProject](https://github.com/YUUXIAO/webProject)  小demo，js部分全用源生js实现。
   - [前端入门和进阶学习笔记](https://github.com/qianguyihao/Web)  
 
+# HTML/CSS
+
+- ### environment
+
+  ```
+  vscode 中安装插件 HTML CSS support
+  
+  debug for google
+  ```
+
+  
+

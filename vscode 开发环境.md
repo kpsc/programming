@@ -6,7 +6,8 @@
   直接安装 python 相关插件
   在目录中的 .vscode 文件夹下有settings.json，指定python编译器路径
   {
-      "python.pythonPath": "D:\\software\\Anaconda3\\python.exe"
+      "python.pythonPath": "D:\\software\\Anaconda3\\python.exe", 
+      "python.terminal.activateEnvironment": false
   }
   
   若没有.vscode及settings.json文件，则自己创建，一般在点击 “调试中的设置” 时会自动生成

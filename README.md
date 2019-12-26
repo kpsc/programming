@@ -1,3 +1,14 @@
+# GIT
+
+```python
+git 免密登录
+    http 格式
+    设置记住密码（默认15分钟）：
+        git config --global credential.helper cache
+    长期存储密码：
+        git config --global credential.helper store
+```
+
 # vscode 开发环境
 
 - ## Python

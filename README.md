@@ -55,6 +55,13 @@ git 免密登录
   (5) jupyter notebook
   
   (3) 中的 --display-name 可以不设置
+  
+  windows下指定打开路径
+  1. cmd 中输入命令 jupyter notebook --generate-config
+     会生成jupyter的配置路径
+  2. 打开其中 .jupyter 目录，选择 jupyter_notebook_config.py 文件
+  3. 修改初始打开位置
+     c.NotebookApp.notebook_dir = path
   ```
 
 - ## conda

@@ -10,6 +10,58 @@ python碰到等待会释放GIL供新的线程使用，实现了线程间的切�
 对IO密集型代码(比如文件操作，网络爬虫) - 多线程效率更高
 ```
 
+```python
+from multiprocessing import Pool
+from multiprocessing import cpu_count
+
+def run(i):
+    # process
+    return data
+ 
+processor = max(1, cpu_count() - 2)
+p = Pool(processor)
+res = []
+for i in range(processor):
+    res.append(p.apply_async(run, args=(i,)))
+    print(str(i) + ' processor started !')
+p.close()
+p.join()
+data = pd.concat([i.get() for i in res])
+```
+
+```python
+# 使用 Manager 进行内存共享，
+from multiprocessing import Process, Manager
+manage = Manager()
+namespace = manage.Namespace()
+
+def fun(namespace, i, size):
+    print(f'pid: {os.getpid()}, processing data[{i}:{i+size}] ...')
+    data = namespace.data[i:i+size]
+    data['C'] = data.apply(lambda x: (x['A'] + x['B']) // 2, axis=1)
+    # namespace.data.loc[i:i+size-1, 'C'] = data['C'].values   # 数据并未写进去，不明白为何
+    # namespace.data2 = data  # 能成功写入数据
+    return data
+
+data = pd.DataFrame({'A': list(range(10000)), 'B': list(range(10000, 0, -1))})
+data['C'] = [0] * len(data)
+datalen = len(data)
+namespace.data = data
+del data
+
+jobs = min(4, cpu_count())
+size = int(datalen / jobs) + 5
+p = Pool(jobs)
+res = []
+for i in range(0, datalen, size):
+    res.append(p.apply_async(fun, args=(namespace, i, size)))
+    print(str(i) + ' processor started !')
+p.close()
+p.join()
+
+data = pd.concat([i.get() for i in res])
+```
+
 
 
 - #### FUN

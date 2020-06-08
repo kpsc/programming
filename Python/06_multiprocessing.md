@@ -30,7 +30,8 @@ data = pd.concat([i.get() for i in res])
 ```
 
 ```python
-# 使用 Manager 进行内存共享，
+# 使用 Manager 进行内存共享
+# https://www.coder.work/article/378856
 from multiprocessing import Process, Manager
 manage = Manager()
 namespace = manage.Namespace()
@@ -60,6 +61,10 @@ p.close()
 p.join()
 
 data = pd.concat([i.get() for i in res])
+
+from joblib import Parallel, delayed
+results = Parallel(n_jobs=workers)(delayed(fun)(namespace, i, size) for i in range(0, datalen, size))
+data = pd.concat(results, axis=0)
 ```
 
 

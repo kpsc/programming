@@ -87,6 +87,9 @@
     ssh-keygen -t rsa
     生成两个文件 keygen(私钥) keygen.pub(公钥)
     
+    使密钥生效
+    ssh-agent bash && ssh-add  ~/.ssh/id_rsa
+    
     添加密钥
         将公钥添加到 git
 

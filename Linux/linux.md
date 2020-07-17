@@ -1,5 +1,30 @@
 # Linux 常用操作
 
+- **系统**
+
+  ```bash
+  uname -a               # 查看内核/操作系统/CPU信息
+  lsb_release -a         # 查看操作系统版本
+  cat /proc/cpuinfo      # 查看CPU信息
+  hostname               # 查看计算机名
+  lspci -tv              # 列出所有PCI设备
+  lsusb -tv              # 列出所有USB设备
+  lsmod                  # 列出加载的内核模块
+  env                    # 查看环境变量
+  ```
+
+  **资源**
+
+  ```bash
+  free -m                # 查看内存使用量和交换区使用量
+  df -h                  # 查看各分区使用情况
+  du -sh <目录名>        # 查看指定目录的大小
+  grep MemTotal /proc/meminfo   # 查看内存总量
+  grep MemFree /proc/meminfo    # 查看空闲内存量
+  uptime                 # 查看系统运行时间、用户数、负载
+  cat /proc/loadavg      # 查看系统负载
+  ```
+
 - 查看安装的软件
 
   ```bash

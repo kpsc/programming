@@ -12,14 +12,13 @@
     
     pip install -i https://... package-name
     
-    
 2. anaconda 创建环境
     2.1 conda create -n pytorch python=3.6
     2.2 source activate pytorch
         source deactivate pytorch   # 如果想返回普通环境，运行
     2.3 conda remove --name pytorch --all  # 删除一个已有的环境
     
-    # 如果不用-n指定环境名称，则被安装在当前活跃环境，也可以通过-c指定通过某个channel安装
+    ### 如果不用-n指定环境名称，则被安装在当前活跃环境，也可以通过-c指定通过某个channel安装
     2.4 conda update -n tensotflow numpy  # 更新package
     2.5 conda remove -n tensotflow numpy  # 删除package
 
@@ -45,7 +44,7 @@
     with torch.no_grad()：
         不记录梯度等信息
         
-          
+    
 4. torch.nn        
     4.1 .Module 所有网络的基类
       eg.
@@ -57,7 +56,7 @@
                 super(Model, self).__init__()
                 self.conv1 = nn.Conv2d(1, 20, 5)# submodule: Conv2d
                 self.conv2 = nn.Conv2d(20, 20, 5)
-
+    
             def forward(self, x):
                x = F.relu(self.conv1(x))
                return F.relu(self.conv2(x))
